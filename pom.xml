@@ -62,8 +62,9 @@
     <description>This is the custom module (Portal Bootstrap 3 templates) for running on a Digital Experience Manager server.</description>
 
     <scm>
-        <connection>scm:dummy:uri</connection>
-        <developerConnection>scm:dummy:uri</developerConnection>
+        <connection>scm:git:git@github.com:Jahia/portal-bootstrap-3-templates.git</connection>
+        <developerConnection>scm:git:git@github.com:Jahia/portal-bootstrap-3-templates.git</developerConnection>
+        <url>scm:git:git@github.com:Jahia/portal-bootstrap-3-templates.git</url>
     </scm>
 
     <repositories>
