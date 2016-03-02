@@ -23,9 +23,7 @@
      ng-init="init('document-browser-${currentNode.identifier}'
      , '<c:url value="${url.base}${currentNode.path}"/>')">
 
-    <h2>
-        Document browser
-    </h2>
+    <h2><fmt:message key="jnt_documentBrowserWidget.portal.edit.title"/></h2>
 
     <div class="box-1">
         <form name="feed_form">

@@ -72,13 +72,13 @@
         <c:if test="${portalIsModel && portalIsEditable}">
             <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Warning!</strong> <fmt:message key="jnt_portalToolbar.model.editable"/>
+                <strong><fmt:message key="jnt.label.warning"/>!</strong> <fmt:message key="jnt_portalToolbar.model.editable"/>
             </div>
         </c:if>
         <c:if test="${portalIsModel && !portalIsEditable && portalIsCustomizable}">
             <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Warning!</strong> <fmt:message key="jnt_portalToolbar.model.notEditable"/>
+                <strong><fmt:message key="jnt.label.warning"/>!</strong> <fmt:message key="jnt_portalToolbar.model.notEditable"/>
             </div>
         </c:if>
 
