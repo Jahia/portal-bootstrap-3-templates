@@ -1,0 +1,3 @@
+<%@ page import="org.jahia.modules.portal.PortalConstants" %>
+<c:set var="portalWidgetReferenceNT" value="<%= PortalConstants.JNT_PORTAL_WIDGET_REFERENCE %>"/>
+<c:set var="referencedWidget" value="${jcr:isNodeType(currentNode, portalWidgetReferenceNT) ? currentNode.properties['j:node'].node : currentNode}"/>

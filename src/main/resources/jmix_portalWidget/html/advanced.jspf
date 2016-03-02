@@ -1,0 +1,54 @@
+<%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
+<c:set var="widgetHasEditView" value="${false}"/>
+<c:set var="widgetFullView" value="${false}"/>
+
+<c:forEach items="${portalContext.portalWidgetTypes}" var="widgetType">
+    <c:if test="${widgetType.name eq currentNode.primaryNodeType.name}">
+        <c:forEach items="${widgetType.views}" var="widgetView">
+            <c:set var="widgetHasEditView" value="${widgetHasEditView || widgetView.key eq 'portal.edit'}"/>
+            <c:set var="widgetFullView" value="${widgetFullView || widgetView.key eq 'portal.full'}"/>
+        </c:forEach>
+    </c:if>
+</c:forEach>
+
+<c:set var="widgetIsEditable" value="${jcr:hasPermission(currentNode, 'jcr:write_live')}"/>
+
+<template:addResources type="javascript" resources="jquery.min.js" />
+<template:addResources type="javascript" resources="portal/jquery-ui.min.js" />
+<template:addResources type="javascript" resources="portal/vendor/angular.min.js" />
+<template:addResources type="javascript" resources="portal/app/portalWidgetWrapper.js" />
+<template:addResources type="css" resources="box.advanced.css"/>
+<template:addResources type="css" resources="portal.bs3.css"/>
+
+<c:set value="${referencedWidget.properties['jcr:title'].string}" var="widgetTitle"/>
+<fmt:message key="portalWidget.box.advanced.deleteConfirmMessage" var="deleteConfirmMessage">
+    <fmt:param value="${functions:escapeJavaScript(widgetTitle)}"/>
+</fmt:message>
+<fmt:message key="portalWidget.box.advanced.ref.deleteConfirmMessage" var="deleteConfirmMessageRef"/>
+<script type="text/javascript">
+    // skin javascript controller
+    $(document).ready(function(){
+        new Jahia.Portal.AdvancedWidgetWrapper("${currentNode.identifier}", ${widgetIsEditable}, ${widgetFullView}, "${deleteConfirmMessage}", "${deleteConfirmMessageRef}");
+    });
+</script>
+
+<div class="widget-header">
+    <h4 class="panel-title" style="${textStyle}">${widgetTitle}</h4>
+
+    <div class="widget-tools">
+        <i class="resize_switch ${iconColorClass}"></i>
+        <c:if test="${widgetHasEditView && widgetIsEditable}">
+            <i class="glyphicon glyphicon-cog ${iconColorClass} edit_switch"></i>
+        </c:if>
+        <i class="glyphicon glyphicon-minus ${iconColorClass} minimize_action"></i>
+        <c:if test="${widgetIsEditable}">
+            <i class="glyphicon glyphicon-trash ${iconColorClass} delete_action"></i>
+        </c:if>
+        <c:if test="${widgetIsEditable}">
+            <i class="glyphicon glyphicon-edit ${iconColorClass} model_switch"></i>
+        </c:if>
+    </div>
+</div>
+<div class="widget-content">
+    ${wrappedContent}
+</div>
