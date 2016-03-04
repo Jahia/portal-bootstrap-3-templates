@@ -1,3 +1,7 @@
 .glyphicon.icon-white {
     color: #fff;
 }
+
+#portalWidgetsZap {
+    z-index: 1000;
+}
