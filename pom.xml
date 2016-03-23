@@ -63,7 +63,7 @@
     <url>scm:git:git@github.com:Jahia/portal-bootstrap-3-templates.git</url>
   </scm>
   <properties>
-    <jahia-depends>default,bootstrap,jahia-bootstrap-v3-components,portal-core,portal-default-templates,portal-user-portal,portal-widgets</jahia-depends>
+    <jahia-depends>bootstrap3-components,bootstrap3-core,default,portal-core,portal-user-portal,portal-widgets</jahia-depends>
   </properties>
   <dependencies>
     <dependency>
