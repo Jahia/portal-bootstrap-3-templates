@@ -6,8 +6,8 @@ You will need this module if you are using Portal factory on your site and your 
 
 ### MINIMAL REQUIREMENTS
 * Digital Factory 7.0.0.0
-* Module Bootstrap 2.1.0
-* Module Jahia Bootstrap V3 Components
+* Module Bootstrap 3 core
+* Module Bootstrap 3 components
 * Modules Portal factory
 
 ### INSTALLATION
