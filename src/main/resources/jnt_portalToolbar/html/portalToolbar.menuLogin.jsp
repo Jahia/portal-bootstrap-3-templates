@@ -9,7 +9,6 @@
 <%@ taglib prefix="ui" uri="http://www.jahia.org/tags/uiComponentsLib" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="uiComponents" uri="http://www.jahia.org/tags/uiComponentsLib" %>
-<%@ taglib prefix="bootstrap" uri="http://www.jahia.org/tags/bootstrapLib" %>
 <%@ taglib prefix="portal" uri="http://www.jahia.org/tags/portalLib" %>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
@@ -29,7 +28,6 @@
 <c:set var="portalIsEnabled" value="${portalContext.enabled}"/>
 <c:set var="portalIsLocked" value="${portalContext.lock}"/>
 
-<bootstrap:addCSS/>
 <template:addCacheDependency path="${portalContext.path}"/>
 <c:if test="${!portalIsModel}">
     <template:addCacheDependency path="${portalContext.modelPath}"/>
@@ -37,12 +35,7 @@
 <template:addResources type="javascript" resources="jquery.min.js" />
 <template:addResources type="javascript" resources="portal/jquery-ui.min.js" />
 <template:addResources type="javascript" resources="portal/vendor/angular.min.js" />
-<template:addResources type="javascript" resources="bootstrap3-alert.js"/>
-<template:addResources type="javascript" resources="bootstrap3-dropdown.js"/>
-<template:addResources type="javascript" resources="bootstrap3-modal.js"/>
-<template:addResources type="javascript" resources="bootstrap3-transition.js"/>
-<template:addResources type="javascript" resources="bootstrap3-tooltip.js" />
-<template:addResources type="javascript" resources="bootstrap3-collapse.js" />
+<template:addResources type="javascript" resources="bootstrap.min.js"/>
 <template:addResources type="javascript" resources="portal/app/portalToolbar.js" />
 <template:addResources type="css" resources="portal-toolbar.css"/>
 <template:addResources type="css" resources="portal.bs3.css"/>
